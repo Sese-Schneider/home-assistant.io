@@ -20,6 +20,7 @@ ha_platforms:
   - device_tracker
   - diagnostics
   - image
+  - light
   - sensor
   - switch
   - update
@@ -51,7 +52,7 @@ It is recommended you use the Administrator or a user with full read/write acces
 but it is not required. The entities that are created will automatically adjust based on the permissions of the user you
 use has.
 
-1. Login to your _Local Portal_ on your UniFi OS device, and select  **Users**. 
+1. Login to your _Local Portal_ on your UniFi OS device, and select  **Users**.
     - **Note**: This **must** be done from the UniFi OS by accessing it directly by IP address (i.e. _Local Portal_), not via `unifi.ui.com` or within the UniFi Network app.
 2. Go to **Admins & Users** from the left hand side menu or [IP address]/admins/users e.g. 192.168.1.1/admins/users.
 3. Select **Add New Admin**.
@@ -64,6 +65,7 @@ There is currently support for the following device types within Home Assistant:
 
 - [Button](#button)
 - [Image](#image)
+- [Light](#light)
 - [Presence detection](#presence-detection)
 - [Actions](#actions)
 - [Switch](#switch)
@@ -206,6 +208,14 @@ Get entities reporting the current memory utilization of a UniFi Network device.
 ### Port Bandwidth sensor
 
 Get entities reporting receiving and transmitting bandwidth per port. These sensors are disabled by default. To enable the bandwidth sensors, on the UniFi integration page, select **Configure**, go to page 3/3 and enable the bandwidth sensors.
+
+## Light
+
+The Light entities will only be available for UniFi access points that support LED ring customization. Not all access points have this capability.
+
+### LED control
+
+Provides control over the LED ring on compatible UniFi access points. Entities appear automatically for devices that support LED customization. The LED state, brightness, and color can be controlled.
 
 ## Firmware updates
 
